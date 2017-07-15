@@ -33,7 +33,7 @@ public class deleteDuplication
 
     }
     /*
-    首先定义
+    首先定义p节点，p节点的含义是，从head头节点，到p节点之间的节点，都是不重复的
      */
     public static ListNode deleteDuplication(ListNode pHead)
     {
@@ -42,6 +42,10 @@ public class deleteDuplication
         ListNode p=head;
         while (p.next!=null)
         {
+            //取p节点后面两个节点，q,m,如果q和m的值不一样，那么q肯定是满足的，因为不清楚m节点后面会不会存在节点和m一样
+            //如果q和m的值一样，那么说明 q m 都是需要被删除的，而且m后面的节点也可能被删除，所以
+            //在m节点依次向后寻找，直到找到与q m节点不同的值，然后把p.next 指向那个节点，表示把q m 这些数值一样的节点进行了删除
+            //需要注意边界问题即可
             ListNode q=p.next;
             ListNode m=q.next;
             if(m==null)
