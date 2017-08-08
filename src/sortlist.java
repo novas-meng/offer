@@ -2,6 +2,7 @@
  * Created by mengfanshan on 2017/7/17.
  */
 public class sortlist {
+
     public static void main(String[] args)
     {
         ListNode node1=new ListNode(1);

@@ -2,7 +2,7 @@ import java.util.BitSet;
 import java.util.HashMap;
 
 public class GeoHash {
-    private static int numbits = 3 * 5; //经纬度单独编码长度
+    private static int numbits = 6 * 5; //经纬度单独编码长度
     //32位编码对应字符
     final static char[] digits = { '0', '1', '2', '3', '4', '5', '6', '7', '8',  
             '9', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'm', 'n', 'p',  
@@ -112,9 +112,9 @@ public class GeoHash {
     
     public static void main(String[] args)  throws Exception{  
         GeoHash geohash = new GeoHash();
-        String s = geohash.encode(45., 125);
+        String s = geohash.encode(45, 125);
         System.out.println(s);
-        double[] geo = geohash.decode("tuvz6m");
+        double[] geo = geohash.decode("wzffz");
         System.out.println(geo[0]+" "+geo[1]);
     }  
 }
